@@ -89,7 +89,7 @@ AgroSat-Visao-Computacional/
 ### 1. Clonar o Repositório
 
 ```bash
-git clone LINK_DO_REPOSITORIO
+git clone https://github.com/fernandamenon93/AgroSat-Visao-Computacional.git
 cd AgroSat-Visao-Computacional
 ```
 
