@@ -2,69 +2,64 @@
 
 ## Integrantes
 
-* Fernanda Rocha Menon – RM554673
-* Luiza Macena Dantas – RM556237
-* Luan Ramos Garcia de Souza – RM558537
-* Matheus Ricciotti – RM556930
-* Matheus Bortolotto – RM555189
-* Monica Paula Rocha – RM (adicionar RM)
+- Fernanda Rocha Menon – RM554673
+- Luiza Macena Dantas – RM556237
+- Luan Ramos Garcia de Souza – RM558537
+- Matheus Ricciotti – RM556930
+- Matheus Bortolotto – RM555189
 
 ---
 
 ## Descrição da Solução
 
-O **AgroSat** é uma solução de Visão Computacional desenvolvida em Python para apoiar o monitoramento de lavouras e a identificação de possíveis sinais de pragas, doenças ou estresse na plantação.
+O AgroSat é uma solução de Visão Computacional desenvolvida em Python para auxiliar no monitoramento de lavouras e na identificação de possíveis sinais de pragas, doenças ou estresse vegetal.
 
-Dentro do contexto da Global Solution, o projeto simula uma ferramenta que poderia ser utilizada por produtores rurais para analisar imagens capturadas por webcam, vídeo, drone ou câmeras de campo. O sistema processa o vídeo em tempo real, identifica regiões verdes associadas à vegetação e detecta manchas amareladas ou marrons que podem representar anomalias visuais relacionadas a pragas ou doenças.
+O sistema processa vídeos de lavouras ou folhas utilizando OpenCV, identifica regiões verdes da vegetação e procura manchas amareladas ou marrons que podem indicar problemas na plantação.
 
-A aplicação exibe na tela:
+Com base na análise visual, o sistema apresenta:
 
-* Status da lavoura;
-* Nível de risco;
-* Percentual estimado de área afetada;
-* Marcação visual das anomalias encontradas;
-* Recomendação automática para o produtor.
+- Status da lavoura;
+- Nível de risco;
+- Área afetada estimada;
+- Marcação visual das anomalias;
+- Recomendações automáticas para o produtor rural.
 
 ---
 
 ## Problema
 
-O agronegócio brasileiro enfrenta perdas significativas quando pragas, doenças ou períodos de seca são identificados tardiamente. Muitas propriedades ainda dependem de inspeções manuais, tornando o monitoramento lento e aumentando os riscos de prejuízo na produção.
+O agronegócio brasileiro sofre perdas significativas devido à identificação tardia de pragas, doenças e problemas ambientais.
+
+Muitas propriedades ainda dependem de inspeções manuais, dificultando o monitoramento constante da lavoura e aumentando os riscos de prejuízos financeiros.
 
 ---
 
 ## Proposta
 
-Utilizar técnicas de Visão Computacional para analisar imagens da lavoura em tempo real e emitir alertas quando sinais de risco forem identificados.
+Utilizar Visão Computacional para analisar imagens e vídeos da lavoura, identificando sinais visuais de anomalias e gerando alertas para auxiliar a tomada de decisão do produtor.
 
-A solução foi idealizada para futuramente ser integrada com:
-
-* Satélites;
-* Drones;
-* Sensores IoT;
-* Plataformas de monitoramento agrícola.
+A solução pode futuramente ser integrada com drones, sensores IoT e imagens de satélite para ampliar a capacidade de monitoramento.
 
 ---
 
 ## Bibliotecas Utilizadas
 
-* Python
-* OpenCV
-* NumPy
+- Python
+- OpenCV
+- NumPy
 
 ---
 
 ## Funcionalidades
 
-* Captura de vídeo em tempo real via webcam;
-* Processamento de vídeos gravados;
-* Modo demonstração com vídeo sintético;
-* Segmentação de áreas verdes da imagem;
-* Detecção de manchas amarelas e marrons;
-* Classificação de risco (baixo, médio ou alto);
-* Exibição de recomendações na tela;
-* Salvamento de prints;
-* Geração opcional de relatório CSV.
+- Processamento de vídeo utilizando OpenCV;
+- Segmentação de áreas verdes;
+- Detecção de manchas amareladas e marrons;
+- Identificação de possíveis anomalias na vegetação;
+- Classificação do risco em Baixo, Médio ou Alto;
+- Exibição de recomendações automáticas;
+- Salvamento de prints da análise;
+- Geração opcional de relatório CSV.
 
 ---
 
@@ -72,11 +67,15 @@ A solução foi idealizada para futuramente ser integrada com:
 
 ```text
 AgroSat-Visao-Computacional/
+│
 ├── src/
 │   └── detector_pragas.py
-├── assets/
+│
 ├── docs/
 │   └── roteiro_video.md
+│
+├── assets/
+│
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -84,12 +83,15 @@ AgroSat-Visao-Computacional/
 
 ---
 
-## Como Executar
+## Como Executar o Projeto
 
 ### 1. Clonar o Repositório
 
 ```bash
 git clone https://github.com/fernandamenon93/AgroSat-Visao-Computacional.git
+```
+
+```bash
 cd AgroSat-Visao-Computacional
 ```
 
@@ -101,16 +103,10 @@ python -m venv .venv
 
 ### 3. Ativar Ambiente Virtual
 
-Windows:
+No Windows:
 
 ```bash
 .venv\Scripts\activate
-```
-
-Linux/macOS:
-
-```bash
-source .venv/bin/activate
 ```
 
 ### 4. Instalar Dependências
@@ -119,31 +115,41 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 5. Executar com Webcam
+### 5. Preparar o Vídeo
 
-```bash
-python src/detector_pragas.py
+O vídeo utilizado na demonstração não está armazenado no GitHub devido ao limite de tamanho de arquivos da plataforma.
+
+Para executar o projeto:
+
+1. Crie uma pasta chamada `assets` caso ela não exista;
+2. Adicione um vídeo contendo uma folha ou lavoura;
+3. Renomeie o vídeo para:
+
+```text
+lavoura_praga.mp4
 ```
 
-### 6. Executar com Vídeo
+A estrutura deverá ficar:
+
+```text
+AgroSat-Visao-Computacional/
+│
+├── assets/
+│   └── lavoura_praga.mp4
+│
+├── src/
+├── docs/
+├── README.md
+└── requirements.txt
+```
+
+### 6. Executar o Sistema
 
 ```bash
 python src/detector_pragas.py --video assets/lavoura_praga.mp4
 ```
 
-### 7. Executar Modo Demonstração
-
-```bash
-python src/detector_pragas.py --demo
-```
-
-### 8. Gerar Relatório CSV
-
-```bash
-python src/detector_pragas.py --salvar
-```
-
-Ou:
+### 7. Gerar Relatório CSV (Opcional)
 
 ```bash
 python src/detector_pragas.py --video assets/lavoura_praga.mp4 --salvar
@@ -153,62 +159,52 @@ python src/detector_pragas.py --video assets/lavoura_praga.mp4 --salvar
 
 ## Controles Durante a Execução
 
-* Pressione **Q** para encerrar o sistema;
-* Pressione **S** para salvar um print da tela.
+- Pressione **Q** para encerrar o sistema;
+- Pressione **S** para salvar um print da tela.
 
 ---
 
 ## Inferência Visual Utilizada
 
-A inferência visual foi desenvolvida utilizando OpenCV e segmentação de cores no espaço HSV.
+A solução utiliza técnicas de Visão Computacional baseadas em segmentação de cores no espaço HSV.
 
 O sistema:
 
-1. Identifica áreas verdes da imagem, representando vegetação;
-2. Procura manchas amarelas e marrons associadas a possíveis anomalias;
-3. Calcula a porcentagem da área afetada;
-4. Classifica o risco em baixo, médio ou alto;
-5. Exibe recomendações automaticamente ao usuário.
+1. Identifica regiões verdes associadas à vegetação;
+2. Procura manchas amareladas e marrons próximas dessas regiões;
+3. Calcula a porcentagem estimada de área afetada;
+4. Classifica automaticamente o nível de risco;
+5. Exibe recomendações para o produtor rural.
 
 ---
 
 ## Aplicação Prática na Global Solution
 
-O AgroSat foi desenvolvido para auxiliar no monitoramento inteligente de lavouras, permitindo identificar visualmente sinais iniciais de pragas, doenças ou estresse vegetal.
+O AgroSat está alinhado ao tema de monitoramento inteligente de lavouras.
 
-Em um cenário real, essa solução poderia ser integrada com drones, satélites e câmeras instaladas no campo, contribuindo para decisões mais rápidas e redução de perdas na produção agrícola.
+A solução permite identificar sinais iniciais de problemas na plantação, auxiliando o produtor a agir rapidamente e reduzindo perdas agrícolas.
 
----
+Em uma aplicação real, o sistema poderia ser integrado com:
 
-## Objetivos de Desenvolvimento Sustentável (ODS)
-
-O projeto está alinhado com:
-
-* ODS 2 – Fome Zero e Agricultura Sustentável;
-* ODS 9 – Indústria, Inovação e Infraestrutura;
-* ODS 13 – Ação Contra a Mudança Global do Clima.
+- Drones;
+- Sensores IoT;
+- Imagens de satélite;
+- Plataformas de monitoramento agrícola.
 
 ---
 
 ## Vídeo de Demonstração
 
+Link do vídeo:
+
+**INSERIR AQUI O LINK DO YOUTUBE (NÃO LISTADO)**
+
 O vídeo apresenta:
 
-1. O problema enfrentado pelo agronegócio;
-2. A proposta da solução AgroSat;
-3. A execução do sistema;
-4. A inferência visual funcionando em tempo real;
-5. A classificação de risco e recomendações automáticas.
-
-Link do vídeo: inserir link do YouTube (não listado).
-
----
-
-## Repositório GitHub
-
-Inserir link do repositório público:
-
-```text
-https://github.com/SEU-USUARIO/AgroSat-Visao-Computacional
-```
-    
+- O problema abordado;
+- A proposta da solução;
+- O funcionamento do sistema;
+- O processamento do vídeo;
+- A identificação das anomalias;
+- A classificação do risco;
+- As recomendações geradas.
