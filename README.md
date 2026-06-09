@@ -197,7 +197,7 @@ Em uma aplicação real, o sistema poderia ser integrado com:
 
 Link do vídeo:
 
-**INSERIR AQUI O LINK DO YOUTUBE (NÃO LISTADO)**
+**https://youtu.be/1ceuPXPwmxU?si=RQ5kXKhyoiTN3tIO**
 
 O vídeo apresenta:
 
